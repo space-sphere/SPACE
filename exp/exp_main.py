@@ -229,7 +229,7 @@ class Exp_Main(Exp_Basic):
                 print('Updating learning rate to {}'.format(scheduler.get_last_lr()[0]))
 
         best_model_path = path + '/' + 'checkpoint.pth'
-        self.model.load_state_dict(torch.load(best_model_path, map_location= 'cuda:0'))
+        self.model.load_state_dict(torch.load(best_model_path))
 
         return self.model
 
@@ -238,7 +238,7 @@ class Exp_Main(Exp_Basic):
         
         if test:
             print('loading model')
-            self.model.load_state_dict(torch.load(os.path.join('./checkpoints/' + setting, 'checkpoint.pth'), map_location='cuda:0'))
+            self.model.load_state_dict(torch.load(os.path.join('./checkpoints/' + setting, 'checkpoint.pth')))
 
         preds = []
         trues = []
