@@ -83,7 +83,7 @@ class Exp_Main(Exp_Basic):
                             else:
                                 outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
                 else:
-                    if 'Linear' in self.args.model or 'TST' in self.args.model or 'Entro' in self.args.model:
+                    if 'Linear' in self.args.model or 'TST' in self.args.model or 'SPACE' in self.args.model:
                         outputs = self.model(batch_x)
                     else:
                         if self.args.output_attention:
@@ -169,7 +169,7 @@ class Exp_Main(Exp_Basic):
                         
                         train_loss.append(loss.item())
                 else:
-                    if 'Linear' in self.args.model or 'TST' in self.args.model or 'Ent' in self.args.model:
+                    if 'Linear' in self.args.model or 'TST' in self.args.model or 'SPACE' in self.args.model:
                             outputs = self.model(batch_x)
                     else:
                         if self.args.output_attention:
